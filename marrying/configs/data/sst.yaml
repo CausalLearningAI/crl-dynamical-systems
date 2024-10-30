@@ -1,0 +1,25 @@
+data_path: &data_path marrying/DATA/sst
+chunk_size: &chunk_size 208
+
+_target_: data.LitDataModule
+
+train_set:
+  _target_: data.SSTDataset
+  data_path: *data_path
+  chunk_size: *chunk_size
+  mode: train
+
+val_set:
+  _target_: data.SSTDataset
+  data_path: *data_path
+  chunk_size: *chunk_size
+  mode: val
+
+test_set:
+  _target_: data.SSTDataset
+  data_path: *data_path
+  chunk_size: *chunk_size
+  mode: test
+
+num_workers: 8
+batch_size: 6480

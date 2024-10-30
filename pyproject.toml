@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta:__legacy__"
+
+[tool.black]
+line-length = 120
+target-version = ['py311']
+
+[tool.isort]
+multi_line_output = 3
+line_length = 120
+include_trailing_comma = true
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401"]

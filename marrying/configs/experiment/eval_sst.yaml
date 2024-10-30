@@ -1,0 +1,48 @@
+# @package _global_
+
+# to execute this experiment run:
+# python train.py experiment=example
+
+defaults:
+  - _self_
+  - override /data: sst
+  - override /model: mechanistic_identifier
+  - override /logger: null
+  - override /trainer: default
+  - override /paths: default
+  - override /extras: default
+  - override /hydra: default
+
+# all parameters below will be merged with parameters from default configurations set above
+# this allows you to overwrite only specified parameters
+task_name: "eval"
+
+tags: ["mechanistic", "sst"]
+
+
+trainer:
+  min_epochs: 10
+  max_epochs: 10
+  accelerator: cuda
+  # gradient_clip_val: 0.5
+
+
+model:
+  state_dim: 1
+  n_steps: 208
+  n_iv_steps: 10
+  n_views: 1
+  hidden_dim: 1024
+  param_dim: 20
+  dct_layer: true
+  freq_frac_to_keep: 0.25
+  learning_rate: 0.00001
+  eval_metrics:
+    - forecasting
+  factor_type: discrete
+  batch_size: 6480
+
+data:
+  batch_size: 6480
+
+ckpt_path: /nfs/scistore19/locatgrp/dyao/neurips/logs/train/runs/2024-10-30_16-27-55/csv/version_0/checkpoints/epoch=0-step=10.ckpt

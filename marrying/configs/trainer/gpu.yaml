@@ -1,0 +1,6 @@
+defaults:
+  - default
+
+accelerator: auto
+devices:
+  - 8

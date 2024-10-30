@@ -1,0 +1,57 @@
+# @package _global_
+
+# to execute this experiment run:
+# python train.py experiment=example
+
+defaults:
+  - override /data: speedy
+  - override /model: mechanistic_identifier
+  - override /trainer: default
+
+# all parameters below will be merged with parameters from default configurations set above
+# this allows you to overwrite only specified parameters
+
+tags: ["mech_id", "sst"]
+
+seed: 12345
+
+trainer:
+  min_epochs: 10
+  max_epochs: 10
+  accelerator: auto
+  devices:
+    - 0
+
+  # gradient_clip_val: 0.5
+
+
+model:
+  state_dim: 2
+  n_steps: 121
+  n_iv_steps: 10
+  n_views: 1
+  hidden_dim: 1024
+  param_dim: 12
+  dct_layer: true
+  freq_frac_to_keep: 0.5
+  learning_rate: 0.00001
+  eval_metrics:
+    - identifiability
+  factor_type: discrete
+  batch_size: 128 #9024
+  # device: "cuda:3"
+
+data:
+  batch_size: 128
+  n_views: 1
+
+logger:
+  csv:
+    prefix: ""
+  # wandb:
+  #   tags: ${tags}
+  #   group: "mnist"
+  # aim:
+  #   experiment: "mnist"
+
+ckpt_path: $CKPT_PATH

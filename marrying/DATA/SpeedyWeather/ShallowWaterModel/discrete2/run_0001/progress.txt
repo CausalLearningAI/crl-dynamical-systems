@@ -1,0 +1,33 @@
+Starting SpeedyWeather.jl run 0001 on Mon, 15 Apr 2024 09:57:03
+Integrating:
+SpectralGrid:
+├ Spectral:   T42 LowerTriangularMatrix{Complex{Float32}}, radius = 6.371e6 m
+├ Grid:       47-ring OctahedralClenshawGrid{Float32}, 3056 grid points
+├ Resolution: 409km (average)
+└ Vertical:   1-level SigmaCoordinates
+Time: 30.0 days at Δt = 1350.0s
+
+All data will be stored in /nfs/scistore19/locatgrp/dyao/DATA/SpeedyWeather/ShallowWaterModel/discrete_small/run_0001
+
+  5%, ETA: 0:00:24, 159.57 years/day
+ 10%, ETA: 0:00:12, 320.81 years/day
+ 15%, ETA: 0:00:08, 482.05 years/day
+ 20%, ETA: 0:00:05, 643.30 years/day
+ 25%, ETA: 0:00:04, 804.54 years/day
+ 30%, ETA: 0:00:03, 965.79 years/day
+ 35%, ETA: 0:00:03, 1127.03 years/day
+ 40%, ETA: 0:00:02, 1288.28 years/day
+ 45%, ETA: 0:00:02, 1449.52 years/day
+ 50%, ETA: 0:00:02, 1610.77 years/day
+ 55%, ETA: 0:00:01, 1772.01 years/day
+ 60%, ETA: 0:00:01, 1933.26 years/day
+ 65%, ETA: 0:00:01,  2.09 millenia/day
+ 70%, ETA: 0:00:01,  2.26 millenia/day
+ 75%, ETA: 0:00:01,  2.42 millenia/day
+ 80%, ETA: 0:00:00,  2.58 millenia/day
+ 85%, ETA: 0:00:00,  2.74 millenia/day
+ 90%, ETA: 0:00:00,  2.90 millenia/day
+ 95%, ETA: 0:00:00,  3.06 millenia/day
+100%, ETA: 0:00:00,  3.22 millenia/day
+
+Integration done in 2 seconds, 200 milliseconds.

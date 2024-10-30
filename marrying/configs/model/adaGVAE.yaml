@@ -1,0 +1,13 @@
+_target_: models.AdaGVAE
+state_dim: 1
+n_steps: 208
+n_iv_steps: 10
+n_views: 1
+hidden_dim: 1024
+param_dim: 12
+dct_layer: true
+freq_frac_to_keep: 0.25
+learning_rate: 0.00001
+eval_metrics: []
+factor_type: discrete
+device: cuda

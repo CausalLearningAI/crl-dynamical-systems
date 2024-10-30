@@ -1,0 +1,62 @@
+data_path: &data_path marrying/DATA/SpeedyWeather
+model_name: &model_name ShallowWaterModel/discrete2
+num_simulations: &num_simulations 2
+n_views: &n_views 3
+grid_size: &grid_size
+  - 2
+include_keys: &include_keys
+  - u
+  - v
+shared_ids: &shared_ids
+  -
+    - 0
+factor_sharing: &factor_sharing
+  0: [0,1]
+collate_style: &collate_style default
+chunk_size: &chunk_size 121
+
+_target_: data.LitDataModule
+
+train_set:
+  _target_: data.SpeedyWeatherDataset
+  data_path: *data_path
+  model_name: *model_name
+  num_simulations: *num_simulations
+  n_views: *n_views
+  grid_size: *grid_size
+  include_keys: *include_keys
+  shared_ids: *shared_ids
+  factor_sharing: *factor_sharing
+  collate_style: *collate_style
+  chunk_size: *chunk_size
+  mode: train
+
+val_set:
+  _target_: data.SpeedyWeatherDataset
+  data_path: *data_path
+  model_name: *model_name
+  num_simulations: *num_simulations
+  n_views: *n_views
+  grid_size: *grid_size
+  include_keys: *include_keys
+  shared_ids: *shared_ids
+  factor_sharing: *factor_sharing
+  collate_style: *collate_style
+  chunk_size: *chunk_size
+  mode: val
+
+test_set:
+  _target_: data.SpeedyWeatherDataset
+  data_path: *data_path
+  model_name: *model_name
+  num_simulations: *num_simulations
+  n_views: *n_views
+  grid_size: *grid_size
+  include_keys: *include_keys
+  shared_ids: *shared_ids
+  factor_sharing: *factor_sharing
+  collate_style: *collate_style
+  chunk_size: *chunk_size
+  mode: test
+
+batch_size: 9024
