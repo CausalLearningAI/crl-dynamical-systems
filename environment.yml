@@ -297,4 +297,4 @@ dependencies:
       - rootutils==1.0.7
       - tueplots==0.0.15
       - yarl==1.9.4
-prefix: /nfs/scistore19/locatgrp/dyao/miniforge3/envs/test_crl
+prefix: /nfs/scistore19/locatgrp/dyao/miniforge3/envs/applied_crl
